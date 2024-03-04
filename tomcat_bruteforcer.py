@@ -78,4 +78,3 @@ for u in usernames:
 if r.status_code != 200:
     print("\n\n[+] Failed!!")
     print("[+] Could not Find the creds :(")
-
