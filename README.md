@@ -1,8 +1,8 @@
 
 
-# Tomcat Manager/Host-Manager Brute Forcer
+# Web Application Brute Forcer for Tomcat and Jenkins
 
-This Python script is designed to perform credential brute-forcing attacks against Tomcat's manager or host-manager pages. It systematically attempts to authenticate using combinations of usernames and passwords provided in separate files.
+This Python script is crafted to conduct credential brute-forcing attacks on web applications such as Tomcat's manager or host-manager pages, and Jenkins. It attempts authentication using combinations of usernames and passwords from provided files.
 
 ## Features
 
@@ -24,23 +24,24 @@ You can install the required libraries using pip:
 
 ### Usage
 
-To use the script, you need to provide it with the URL of the Tomcat page you wish to target, the specific path to either the manager or host-manager, and the file paths for the username and password lists. Optionally, you can specify a proxy.
+Provide the script with the target's URL, the application path (for Tomcat's either `/manager` or `/host-manager` for Jenkins `/login`), and the paths to your username and password lists. A proxy is optional.
 
-`python tomcat_bruteforcer.py -U <URL> -P <Path> -u <UsernamesFile> -p <PasswordsFile> [--proxy <ProxyAddress>]`
+`python bruteforcer.py -U <URL> -P <Path> -u <UsernamesFile> -p <PasswordsFile> [--proxy <ProxyAddress>]`
 
 #### Arguments
 
     -U, --url: The URL to the target Tomcat page.
-    -P, --path: The path to the manager or host-manager on the target site.
+    -P, --path: The path to the manager,host-manager or login on the target site.
     -u, --usernames: The file containing the list of usernames to attempt.
     -p, --passwords: The file containing the list of passwords to attempt.
     --proxy: (Optional) The proxy address to route traffic through, e.g., http://127.0.0.1:8080.
 
 ### Example
+- **Tomcat**:
+  - `python bruteforcer.py -U http://example.com -P /manager -u usernames.txt -p passwords.txt --proxy http://127.0.0.1:8080`
+- **Jenkins**:
+  - `python bruteforcer.py -U http://example.com:8000 -P /login -u usernames.txt -p passwords.txt --proxy http://127.0.0.1:8080`
 
-`python tomcat_bruteforcer.py -U http://example.com -P /manager -u usernames.txt -p passwords.txt --proxy http://127.0.0.1:8080`
-
-This command will attempt to brute force the login at http://example.com/manager/html using the usernames and passwords listed in usernames.txt and passwords.txt, respectively, routing traffic through the proxy at http://127.0.0.1:8080.
 
 ## Disclaimer
 
