@@ -48,5 +48,10 @@ Provide the script with the target's URL, the application path (for Tomcat's eit
 This tool is intended for security research and penetration testing activities. Use it only on systems you have permission to test. Unauthorized access to computer systems is illegal and punishable by law.
 License
 
+## TODO 
+- [ ] Allow users to add headers from file. 
+- [ ] Improve logic for success/failure.
+- [ ] Improve way to pass additional POST arguments
+
 This project is open-source and available under the MIT License.
 
