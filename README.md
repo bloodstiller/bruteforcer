@@ -50,6 +50,9 @@ License
 
 ## TODO 
 
+- [ ] 0. Better POST request parameter handling/passing:
+    Allow users to pass values with variables as place holders for POST requests e.g loginurl=&username=^USER^&password=^PASS^
+
 - [ ] 1. Dynamic Parameter Handling:
 
     Allow the script to accept custom data parameters for different forms and authentication mechanisms. This can be achieved by accepting parameters as key-value pairs or a JSON object.
